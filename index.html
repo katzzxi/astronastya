@@ -6,14 +6,21 @@
 <title>Марафон Натальная Карта</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Miama+Nueva:wght@400;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 <link href="https://db.onlinewebfonts.com/c/6c85d34208df8725fffbbb8009b630d8?family=Monotype+Koufi+Bold" rel="stylesheet">
 <link rel="icon" type="image/png" href="Black.png">
 <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+  font-family: 'Miama Nueva';
+  src: url('miamanueva.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+</style>
 </head>
 <body>
   <main>
-    <!-- Hero Section -->
     <section class="hero">
       <div class="container">
         <h1 class="hero-title animate-on-scroll animate-fade-in-up">Марафон</h1>
@@ -32,7 +39,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
     <section class="about-section">
       <div class="container">
         <div class="about-content animate-on-scroll animate-fade-in-up">
@@ -45,7 +51,6 @@
       </div>
     </section>
 
-    <!-- Program Section -->
     <section class="program-section" id="program">
       <div class="container">
         <h2 class="program-title animate-on-scroll animate-fade-in-up">ПРОГРАММА</h2>
@@ -65,7 +70,6 @@
       </div>
     </section>
 
-        <!-- Payment Section -->
     <section class="payment-section">
       <div class="container">
         
@@ -73,7 +77,6 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section">
       <div class="container">
         <p class="contact-text animate-on-scroll animate-fade-in-up">По всем вопросам писать</p>
@@ -83,7 +86,6 @@
   </main>
 
   <script>
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
       anchor.addEventListener('click', function(e){
         const targetId = this.getAttribute('href');
@@ -97,7 +99,6 @@
       });
     });
 
-    // Animation on scroll
     function animateOnScroll() {
       const elements = document.querySelectorAll('.animate-on-scroll');
       
@@ -115,7 +116,6 @@
         }
       });
 
-      // Special animation for program items
       const programSection = document.querySelector('.program-section');
       if (programSection) {
         const programTop = programSection.getBoundingClientRect().top;
@@ -134,7 +134,6 @@
       }
     }
 
-    // Run animation check on scroll and on page load
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
   </script>
