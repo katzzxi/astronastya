@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Марафон Натальная Карта</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Miama+Nueva:wght@400;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://db.onlinewebfonts.com/c/6c85d34208df8725fffbbb8009b630d8?family=Monotype+Koufi+Bold" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title animate-on-scroll animate-fade-in-up">Марафон</h1>
+        
+        <div class="photo-section animate-on-scroll animate-scale-in">
+          <div class="photo-container">
+            <div class="photo-background"></div>
+            <img class="main-photo" src="Rectangle 579.png" alt="Астрология">
+            <img class="overlay-photo" src="Rectangle 580.png" alt="Звезды">
+          </div>
+        </div>
+        
+        <h2 class="natal-chart-title animate-on-scroll animate-fade-in-up">НАТАЛЬНАЯ КАРТА</h2>
+        
+        <a href="#program" class="btn-primary animate-on-scroll animate-slide-in-up">СМОТРЕТЬ ПРОГРАММУ</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-content animate-on-scroll animate-fade-in-up">
+          <p class="about-text">
+            С помощью нее мы можем выстроить жизнь своей мечты, понять куда двигаться, 
+            найти свое предназначение, раскрыть свой потенциал, прокачать свои слабые стороны,
+            узнать что будет наполнять энергией и давать силы, чтобы жизнь заиграла новыми красками
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Section -->
+    <section class="program-section" id="program">
+      <div class="container">
+        <h2 class="program-title animate-on-scroll animate-fade-in-up">ПРОГРАММА</h2>
+        <div class="program-subtitle animate-on-scroll animate-scale-in">МАРАФОНА</div>
+        
+        <div class="program-list">
+          <div class="program-item" data-delay="0">Знакомство с натальной картой, ее построение</div>
+          <div class="program-item" data-delay="100">Описание планет, знаков зодиака</div>
+          <div class="program-item" data-delay="200">Аспекты,что это такое, описание</div>
+          <div class="program-item" data-delay="300">Как прокачать свою женственность</div>
+          <div class="program-item" data-delay="400">Карьера и финансы</div>
+          <div class="program-item" data-delay="500">На чем можно зарабатывать в свое удовольствие</div>
+          <div class="program-item" data-delay="600">Как договорится с любым человеком и добиться желаемого</div>
+          <div class="program-item" data-delay="700">Чем себя мотивировать</div>
+          <div class="program-item" data-delay="800">Как научится контролировать свои эмоции, быть всегда в балансе, спокойствие и гармонии с самой собой</div>
+        </div>
+      </div>
+    </section>
+
+        <!-- Payment Section -->
+    <section class="payment-section">
+      <div class="container">
+        
+        <a href="https://tbank.ru/cf/75BCt4kVlMG" class="btn-payment animate-on-scroll animate-slide-in-up">КУПИТЬ</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <p class="contact-text animate-on-scroll animate-fade-in-up">По всем вопросам писать</p>
+        <a href="https://t.me/astrolognastyaa" class="btn-telegram animate-on-scroll animate-scale-in" target="_blank">@astrolognastyaa</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+      anchor.addEventListener('click', function(e){
+        const targetId = this.getAttribute('href');
+        if(targetId.length > 1){
+          const el = document.querySelector(targetId);
+          if(el){
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // Animation on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.style.opacity = '1';
+          element.classList.add(element.classList.contains('animate-fade-in-up') ? 'animate-fade-in-up' : 
+                               element.classList.contains('animate-fade-in-left') ? 'animate-fade-in-left' :
+                               element.classList.contains('animate-fade-in-right') ? 'animate-fade-in-right' :
+                               element.classList.contains('animate-scale-in') ? 'animate-scale-in' :
+                               element.classList.contains('animate-slide-in-up') ? 'animate-slide-in-up' : 'animate-fade-in-up');
+        }
+      });
+
+      // Special animation for program items
+      const programSection = document.querySelector('.program-section');
+      if (programSection) {
+        const programTop = programSection.getBoundingClientRect().top;
+        const programVisible = 200;
+        
+        if (programTop < window.innerHeight - programVisible) {
+          const programItems = document.querySelectorAll('.program-item');
+          programItems.forEach(item => {
+            const delay = parseInt(item.getAttribute('data-delay')) || 0;
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.classList.add('animate-program-item');
+            }, delay);
+          });
+        }
+      }
+    }
+
+    // Run animation check on scroll and on page load
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
+</body>
+</html>
